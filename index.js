@@ -16,9 +16,10 @@ app.use(express.static(path.join(__dirname,'public')));
 const server=app.listen(app.get('port'), ()=>{
     console.log('server on port', app.get('port'));
 });
+const urlServe=(app.get('port')===3000)?"http://localhost:3000":"https://baydo.herokuapp.com"
 
-    //socket io
-    const io = require('socket.io')(server, {cors:true, origins:["http://localhost:3000"]});
+//socket io
+const io = require('socket.io')(server, {cors:true, origins:[urlServe]});
 
     require('./socket')(io,'/baydo');
     require('./socket')(io,'/uno');
