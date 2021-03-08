@@ -1,7 +1,7 @@
 module.exports = (io,url)=>{
     io.of(url).on('connection',socket=>{
         socket.on('send:pendiente',data=>{
-
+            console.log(data.CodDPM)
             switch (parseInt(data.CodDPM)){
                 case 1:
                     io.of(url).emit('send:pendienteDelivery'+data.IdSucursal,data);

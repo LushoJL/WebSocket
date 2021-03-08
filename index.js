@@ -22,18 +22,8 @@ const urlServe=(app.get('port')===3000)?"http://localhost:3000":"https://baydo.h
 const io = require('socket.io')(server, {cors:true, origins:[urlServe]});
 
     require('./socket')(io,'/baydo');
-    require('./socket')(io,'/uno');
-    require('./socket')(io,'/dos');
-    require('./socket')(io,'/tres');
-    require('./socket')(io,'/cuatro');
-
-
-
-    // const io=require('socket.io')(server,{cors:true, origins:["http://localhost:3000"]});
-    // const nsp=
-    // io.of('/games').on('connection',socket=>{
-    //     console.log('new cliente')
-    //     io.sockets.emit('welcome','hello and welcome');
-    // })
-// });
+    require('./socket')(io,'/empresa2');
+    require('./socket')(io,'/empresa3');
+    require('./socket')(io,'/empresa4');
+    require('./socket')(io,'/empresa5');
 
